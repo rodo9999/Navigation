@@ -1,39 +1,50 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>List App</title>
+	<title>Multi Drop-Down</title>
 	<script type="text/javascript" src="phonegap.js"></script>
 	<script type = "text/javascript">
 		function onBodyLoad() {
 			// document.addEventListener("deviceready", PhonegapLoaded, false);
 			
 			// El bloque siguiente está copiado de https://stackoverflow.com/questions/6687099/how-to-fire-deviceready-event-in-chrome-browser-trying-to-debug-phonegap-projec
-		    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+		    	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
 				document.addEventListener("deviceready", PhonegapLoaded, false);
 			} else {
 				PhonegapLoaded();
 			}
 		}
 		
-		function PhonegapLoaded(){
-			document.getElementById("PhoneNo").addEventListener("change", dispMessage);
+		function PhonegapLoaded(){ document.getElementById("PhoneNo").
+			addEventListener("change", dispMessage);
 		}
 		
 		function dispMessage(){
-			var selectedPhone = document.getElementById("PhoneNo").value;
-			document.getElementById("info").innerHTML = "Phone Number selected is: " +
-			selectedPhone;
+			Phones = document.getElementById("PhoneNo");
+			var selectedNumbers = "";
+			
+			for(var i = 0; i< Phones.options.length; i++){
+				if (Phones.options[i].selected) {
+					selectedNumbers += Phones.options[i].value + " ";
+				}
+			}
+			document.getElementById("info").innerHTML = "Phone Numbers selected are : "	+ selectedNumbers;
 		}
-</script>
+		</script>
 </head>
 <body onload = "onBodyLoad()">
-	<select id = "PhoneNo" >
-		<option value = "none">Select a Phone Number</option>
+	<select name = "PhoneNo" id = "PhoneNo" multiple = "multiple">
+		<option value = "none">Select Phone Numbers</option>
 		<option value = "1111111111">1111111111</option>
 		<option value = "2222222222">2222222222</option>
 		<option value = "3333333333">3333333333</option>
 		<option value = "4444444444">4444444444</option>
 		<option value = "5555555555">5555555555</option>
+		<option value = "6666666666">6666666666</option>
+		<option value = "7777777777">7777777777</option>
+		<option value = "8888888888">8888888888</option>
+		<option value = "9999999999">9999999999</option>
+		<option value = "1111122222">1111122222</option>
 	</select><br><br>
 	<div id = "info"></div>
 </body>
