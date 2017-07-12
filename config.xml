@@ -1,9 +1,9 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id = "com.rodo.dropdown"
+    id = "com.rodo.multidropdown"
     version = "1.0.0">
-<name>Drop-Down List</name>
+<name>Multiple Drop-Down List</name>
 <description>
   Prueba de drop-down list.
 </description>
