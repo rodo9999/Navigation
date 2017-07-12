@@ -1,2 +1,2 @@
-# Drop-Down List
-Basado en el libro PhoneGap Build de Bintu Harwani, pagina 23
+# Multiple Drop-Down List
+Basado en el libro PhoneGap Build de Bintu Harwani, pagina 25
