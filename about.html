@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>About Us</title>
+	<script type="text/javascript" src="phonegap.js"></script>
+	<script type = "text/javascript">
+		function onBodyLoad() {
+			// document.addEventListener("deviceready", PhonegapLoaded, false);
+			
+			// El bloque siguiente está copiado de https://stackoverflow.com/questions/6687099/how-to-fire-deviceready-event-in-chrome-browser-trying-to-debug-phonegap-projec
+		    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+				document.addEventListener("deviceready", PhonegapLoaded, false);
+			} else {
+				PhonegapLoaded();
+			}
+		}
+		
+		function PhonegapLoaded(){
+			document.addEventListener("backbutton", function(e){
+				e.preventDefault();
+				alert("Back Button Pressed");
+				navigator.app.backHistory();
+			}, true);
+		}
+	</script>
+</head>
+<body onload = "onBodyLoad()">
+	<b> We are dealing with Smartphone Apps </b>
+</body>
+</html>
